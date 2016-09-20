@@ -2,7 +2,7 @@
 /*
  * This is a PHP library that handles calling reCAPTCHA.
  *    - Documentation and latest version
- *          https://developers.google.com/recaptcha/docs/
+ *          https://developers.google.com/recaptcha/docs/intro
  *    - Get a reCAPTCHA API Key
  *          https://www.google.com/recaptcha/admin/create
  *
@@ -83,12 +83,11 @@ class Recaptcha extends \Phalcon\DI\Injectable
     /**
      * Calls an HTTP POST function to verify if the user's guess was correct
      *
-     * @param string $challenge
      * @param string $response
      * @param array $extra_params An array of extra variables to post to the server
      * @return boolean $this->is_valid property
      */
-    public static function check($challenge, $response, $extra_params = array())
+    public static function check($response, $extra_params = array())
     {
         // Discard spam submissions
         if (!$challenge or !$response) {
@@ -99,7 +98,6 @@ class Recaptcha extends \Phalcon\DI\Injectable
         $response = self::httpPost('www.google.com', "/recaptcha/api/verify", array(
             'privatekey' => self::API_PRIVATE_KEY,
             'remoteip' => $_SERVER['REMOTE_ADDR'],
-            'challenge' => $challenge,
             'response' => $response
         ) + $extra_params);
         $answers = explode("\n", $response[1]);

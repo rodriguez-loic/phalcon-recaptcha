@@ -8,7 +8,7 @@
  *
  * This library is highly inspired from https://github.com/pavlosadovyi/phalcon-recaptcha
  *
- * AUTHORS::
+ * AUTHORS:
  *   Loïc Rodriguez
  */
 class Recaptcha extends \Phalcon\DI\Injectable

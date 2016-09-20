@@ -45,8 +45,7 @@ To check posted data, you just have to use in your controller:
 ```php
 // Get response from API
 $response = Recaptcha::check(
-  $this->request->getPost('recaptcha_challenge_field'),
-  $this->request->getPost('recaptcha_response_field')
+  $this->request->getPost('g-recaptcha-response')
 );
 
 if ($response) {

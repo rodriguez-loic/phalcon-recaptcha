@@ -1,6 +1,6 @@
 # phalcon-recaptcha
 
-Simple library rewritted (from: https://github.com/pavlosadovyi/phalcon-recaptcha) for using ReCAPTCHA v2 with Phalcon.
+Simple library for using ReCAPTCHA v2 with Phalcon.
 
 ## Preparation
 
@@ -44,9 +44,7 @@ You can also use array to specify: themes, type, size, tabindex, callback and ex
 To check posted data, you just have to use in your controller:
 ```php
 // Get response from API
-$response = Recaptcha::check(
-  $this->request->getPost('g-recaptcha-response')
-);
+$response = Recaptcha::check($this->request->getPost('g-recaptcha-response'));
 
 if ($response) {
   // Captcha is valid - continue

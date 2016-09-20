@@ -57,4 +57,4 @@ if ($response) {
 
 # For more information
 
-You can check google documentation here: https://developers.google.com/recaptcha/docs/
+You can check google documentation here: https://developers.google.com/recaptcha/docs/intro
